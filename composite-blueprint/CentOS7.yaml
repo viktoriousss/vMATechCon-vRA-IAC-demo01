@@ -55,8 +55,7 @@ components:
       reservation_policy:
         id: ReservationPolicy02-vSphere
         label: ReservationPolicy02-vSphere
-      security_groups:
-      - ${_resource~SG01-SSH}
+      security_groups: []
       security_tags: []
       source_machine:
         fixed:
@@ -83,18 +82,6 @@ components:
         fixed: LANVLAN0
       network_profile:
         fixed: LAN-VLAN0
-  SG01-SSH:
-    type: Infrastructure.Network.SecurityGroup.NSX.OnDemand
-    data:
-      endpoint:
-        fixed: proxy-agent-vsphere
-      name:
-        fixed: SG01-SSH
-      security_policies:
-        fixed:
-        - endpoint: proxy-agent-vsphere
-          name: SP-SSH
 layout:
   CentOS7: 1,1
   LANVLAN0: 2,0
-  SG01-SSH: 0,1

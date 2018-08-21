@@ -1,7 +1,7 @@
-name: "auto-generated-pkg-0995df80-2414-489f-823d-68586e300992"
+name: "auto-generated-pkg-675a0d1a-48b3-4477-a5da-d88bf03c11d3"
 productVersion: "7.4.0-SNAPSHOT"
 data:
 - locator: "composite-blueprint/CentOS7.yaml"
   name: "CentOS7"
   description: "CentOS7"
-exportTime: "2018-08-21T19:50:47.499Z"
+exportTime: "2018-08-21T19:58:15.058Z"

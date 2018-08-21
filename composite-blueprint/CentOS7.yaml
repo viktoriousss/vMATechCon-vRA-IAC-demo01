@@ -1,0 +1,88 @@
+id: CentOS7
+name: CentOS7
+description: ''
+status: PUBLISHED
+components:
+  CentOS7:
+    type: Infrastructure.CatalogItem.Machine.Virtual.vSphere
+    data:
+      _cluster:
+        default: 1
+        max: 1
+        min: 1
+      action:
+        fixed: FullClone
+      allow_storage_policies:
+        fixed: false
+      blueprint_type:
+        fixed: '1'
+      cpu:
+        default: 1
+        max: 1
+        min: 1
+        readOnly: true
+      disks:
+      - capacity: 16
+        custom_properties: null
+        id: 1533200671160
+        initial_location: ''
+        is_clone: true
+        label: Hard disk 1
+        storage_reservation_policy: ''
+        userCreated: false
+        volumeId: 0
+      guest_customization_specification: vra7-centos7
+      machine_prefix:
+        fixed:
+          id: viktorious-
+      max_network_adapters: {}
+      max_volumes: {}
+      memory:
+        default: 2048
+        max: 4096
+        min: 2048
+        readOnly: true
+      nics:
+      - address: ''
+        assignment_type: DHCP
+        id: 0
+        load_balancing: ''
+        network: ${_resource~LANVLAN0}
+        network_profile: LAN-VLAN0
+      provisioning_workflow:
+        fixed:
+          id: CloneWorkflow
+          label: CloneWorkflow
+      reservation_policy:
+        id: ReservationPolicy02-vSphere
+        label: ReservationPolicy02-vSphere
+      security_groups: []
+      security_tags: []
+      source_machine:
+        fixed:
+          id: adfd6bca-d47a-44ef-839c-20e8e2df78c3
+          label: template-centos7-vra-agent-7.4.0
+      source_machine_name:
+        fixed: template-centos7-vra-agent-7.4.0
+      storage:
+        default: 16
+        max: 16
+        min: 16
+        readOnly: true
+    componentProfiles:
+    - defaultValueName: ValueSet.Small
+      id: size
+      permissibleValueNames:
+      - ValueSet.Large
+      - ValueSet.Medium
+      - ValueSet.Small
+  LANVLAN0:
+    type: Infrastructure.Network.Network.Existing
+    data:
+      name:
+        fixed: LANVLAN0
+      network_profile:
+        fixed: LAN-VLAN0
+layout:
+  CentOS7: 1,1
+  LANVLAN0: 2,0
